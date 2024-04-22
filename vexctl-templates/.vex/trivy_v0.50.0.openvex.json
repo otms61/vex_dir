@@ -1,0 +1,45 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "merged-vex-e573ae5e638448099a990531ab576bf2afb2a05644f003863517743bb94c6612",
+  "author": "Unknown Author",
+  "timestamp": "2024-04-22T10:47:09.942124+09:00",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2019-25210"
+      },
+      "timestamp": "2024-04-22T10:46:22.263576+09:00",
+      "products": [
+        {
+          "@id": "pkg:golang/github.com/aquasecurity/trivy",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/helm.sh/helm/v3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-3817"
+      },
+      "timestamp": "2024-04-22T10:46:15.87272+09:00",
+      "products": [
+        {
+          "@id": "pkg:golang/github.com/aquasecurity/trivy",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/hashicorp/go-getter"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path"
+    }
+  ]
+}
