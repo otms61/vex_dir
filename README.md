@@ -1,10 +1,10 @@
 ## 概要
 
-レポジトリ内でopenvexのファイルを管理する構成
-
-- ファイル名は、 `openvex.json` か、 `.vex.json` か`.openvex.json` という拡張子を持ったファイルとする
-- defaultブランチの `${repo root}/.vex` 直下をVEXファイルの置き場とする
-- VEXを活用する時には、レポジトリ内のopenvexのステートメントをすべてマージし、purlでマッチしたものを利用する
+- 管理方法
+  - ファイル名は、 `openvex.json` か、 `.vex.json` か`.openvex.json` という拡張子を持ったファイルとする
+  - defaultブランチの `${repo root}/.vex` 直下をVEXファイルの置き場とする
+- 活用方法
+  - VEXを活用する時には、レポジトリ内のopenvexのステートメントをすべてマージし、purlでマッチしたものを利用する
 
 ## 構成
 githubでのデフォルトブランチの .vex ディレクトリをopenvexファイルの置き場とする。ファイル名は、`openvex.json` か、拡張子に `.vex.json` or `.openvex.json` とする。
