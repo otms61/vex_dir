@@ -117,7 +117,7 @@ vexctlなどのツールを使う時に拡張子として拡張子をつけて�
 > Author is the identifier for the author of the VEX statement. This field should ideally be a machine readable identifier such as an IRI, email address, etc. author MUST be an individual or organization. author identity SHOULD be cryptographically associated with the signature of the VEX document or other exchange mechanism.
 
 createしていく運用ならそこまで問題にならないかも。
-addの運用の時には一つ前のauthorが実作業者と違う場合などをこうりょする必要ありそう。add運用の時には組織名を使うとかにはなりそう。
+addの運用の時には一つ前のauthorが実作業者と違う場合などを考慮する必要ありそう。add運用の時には組織名を使うとかにはなりそう。
 
 ```
 https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#status-justifications
@@ -130,7 +130,7 @@ https://github.com/openvex/vexctl/blob/2e12d7f1f4775eaa53c9e967ab661b0dc9c96c93/
   "author": "The OpenVEX Project",
 ```
 
-### 別のpurlも起きたい時にはどうすれば良いのか？
+### 別のschemaのpurlもおきたい時にはどうすれば良いのか？
 
 `pkg:golang/github.com/aquasecurity/trivy` について検討をしているが、 `pkg:oci/aqua/trivy` についてのvexファイルはどう管理するのが良いか？
 同じファイルに複数プロダクトを書くのか、ファイル名を分けるのか？
