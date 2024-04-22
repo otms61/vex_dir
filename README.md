@@ -8,37 +8,22 @@
 
 
 ## 構成
-githubでのデフォルトブランチの .vex ディレクトリをopenvexファイルの置き場とする。同じディレクトリには別フォーマットのvexが置かれる可能性などもあるかもしれない。
-
-> [!NOTE]
-> ディレクトリ名は `.vex` で良いのか？ 別案としては `.openvex` など。
->  `.vex/openvex` みたいなのも考えられるが、openvexであることは拡張子で明らかにしておけば、ディレクトリを掘るまでもないとは思う。
-
-ファイル名は、`openvex.json` か、拡張子に `.vex.json` or `.openvex.json` とする。
+githubでのデフォルトブランチの .vex ディレクトリをopenvexファイルの置き場とする。ファイル名は、`openvex.json` か、拡張子に `.vex.json` or `.openvex.json` とする。
 
 vexctl内には `openvex.json` というファイル名と、二つ拡張子( `.openvex.json` と `.vex.json` )が使われている。
-- `openvex.json`
-  - https://github.com/openvex/vexctl/tree/main/examples/csaf
-- `xxx.vex.json`
-  - https://github.com/openvex/vexctl/tree/main/examples/openvex
-- `xxx.openvex.json`
-  - https://github.com/openvex/vexctl/tree/main/examples/sarif
+- `openvex.json`: https://github.com/openvex/vexctl/tree/main/examples/csaf
+- `xxx.vex.json`: https://github.com/openvex/vexctl/tree/main/examples/openvex
+- `xxx.openvex.json`: https://github.com/openvex/vexctl/tree/main/examples/sarif
 
 コマンドのヘルプやレポジトリ内のexamplesのファイルを見ると、`openvex.json` か `.openvex.json` が使われていることが多いことが多い。
-
-> [!NOTE]
-> OpenVEXの仕様としては、拡張子にルールはなく、JSON-LDの `@context` の設定がされていれば良い。
-> 
-> https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#openvex-and-json-ld
-> ただ、複数ファイル置かれていたりするので、パーサーを作る時に余計なファイルを読み込まなくて済む点や、vexctlなどのツールを使う時に拡張子として拡張子をつけていた方が扱いやすそう。  `vexctl merge *.openvex.json` みたいにかける。
 
 ## statementのマッチングについて
 
 マッチングの方針
 - openvexのファイルが複数に分かれていた場合には、全てをマージする
 - vex-goのマッチングにより、マッチするステートメント一覧を取得する
-  - 複数マッチした場合には、バージョンなどの指定まで一致していれば、そちらを優先。
-  - [細かく指定したvexを置きたい場合の例](./complex-situation/.vex) を参照
+  - バージョン指定なしのpurlと、バージョン指定ありのpurlの二つにマッチした場合には、バージョン指定ありのpurlを優先。
+    - [細かく指定したvexを置きたい場合の例](./complex-situation/.vex) を参照
 
 ## 例
 
@@ -88,6 +73,21 @@ vexファイルの運用方法として考えられる例をいくつか挙げ�
 
 
 ## 要検討項目
+
+### ディレクトリ名
+
+ディレクトリ名は `.vex` で良いのか？ 別案としては `.openvex` など。
+`.vex/openvex` みたいなのも考えられるが、openvexであることは拡張子で明らかにしておけば、ディレクトリを掘るまでもないとは思う。
+
+### ファイル名
+OpenVEXの仕様としては、拡張子にルールはなく、JSON-LDの `@context` の設定がされていれば良い。
+
+https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#openvex-and-json-ld
+
+ただ、 `.vex` ディレクトリには他のvexフォーマットのファイルも置かれる可能性があり、拡張子を絞っておいた方がパーサーは楽。
+vexctlなどのツールを使う時に拡張子として拡張子をつけていた方が扱いなどメリットはある。
+ `vexctl merge *.openvex.json` みたいにかける。
+
 
 ### Authorどうするのか問題。
 
