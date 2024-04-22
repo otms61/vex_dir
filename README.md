@@ -3,7 +3,7 @@
 レポジトリ内でopenvexのファイルを管理する構成
 
 - defaultブランチの `${repo root}/.vex` をVEXファイルの置き場とする
-- ファイル名は、 `openvex.json` か、 `.openvex.json` という拡張子を持ったファイルとする
+- ファイル名は、 `openvex.json` か、 `.vex.json` か`.openvex.json` という拡張子を持ったファイルとする
 - 複数のopenvexファイルを持つ場合は、`${repo root}/.vex` 直下に置く
 
 
