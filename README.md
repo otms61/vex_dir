@@ -71,6 +71,28 @@ vexファイルの運用方法として考えられる例をいくつか挙げ�
     └── README.md
 ```
 
+### vexctlのtemplateを利用して、バージョンごとにopenvexファイルを生成する構成 (vexctl-templates)
+
+[vexctlのtemplateを利用して、バージョンごとにopenvexファイルを生成する構成](./vexctl-templates/.vex)
+
+こういうのも考えられるが、運用が面倒すぎて、たぶんやる人はいないだろう。
+
+```
+> tree . -a
+.
+└── .vex
+    ├── .openvex
+    │   └── templates
+    │       ├── README.md
+    │       ├── main.openvex.json
+    │       ├── other-cmd-in-trivy-repo.openvex.json
+    │       └── other-cmd-in-trivy-repo@v0.0.2.openvex.json
+    ├── README.md
+    ├── other-cmd-in-trivy-repo@v0.0.1.openvex.json
+    ├── other-cmd-in-trivy-repo@v0.0.2.openvex.json
+    └── other-cmd-in-trivy-repo@v0.0.3.openvex.json
+
+```
 
 ## 要検討項目
 
