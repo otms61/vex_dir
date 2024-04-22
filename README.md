@@ -32,16 +32,29 @@ vexctl内には `openvex.json` というファイル名と、二つ拡張子( `.
 > https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md#openvex-and-json-ld
 > ただ、複数ファイル置かれていたりするので、パーサーを作る時に余計なファイルを読み込まなくて済む点や、vexctlなどのツールを使う時に拡張子として拡張子をつけていた方が扱いやすそう。  `vexctl merge *.openvex.json` みたいにかける。
 
+## statementのマッチングについて
+
+マッチングの方針
+- openvexのファイルが複数に分かれていた場合には、全てをマージする
+- vex-goのマッチングにより、マッチするステートメント一覧を取得する
+  - 複数マッチした場合には、バージョンなどの指定まで一致していれば、そちらを優先。
+  - [細かく指定したvexを置きたい場合の例](./complex-situation/.vex) を参照
 
 ## 例
 
+以下の
+
 ### 一番シンプルな構成(single-file/)
+
+[single fileの例](./single-file/.vex)
 
 `.vex/openvex.json` の一ファイル
 
 除外したいCVEがでるごとに、 `vexctl add` していく
 
-### もう少し細かく指定したvexを置きたい場合(complex-situation/)
+### もう少し細かく指定したvexを置きたい構成(complex-situation/)
+
+[細かく指定したvexを置きたい場合の例](./complex-situation/.vex)
 
 ひとつのレポジトリに二つのプロダクトが管理されている場合。
 また、特定のバージョンだけ追加でステートメントを置きたい場合。
@@ -56,6 +69,8 @@ vexctl内には `openvex.json` というファイル名と、二つ拡張子( `.
 ```
 
 ### CVEごとにopenvexファイルを生成する構成（multi-files-per-cve）
+
+[CVEごとにopenvexファイルを生成する例](./multi-files-per-cve/.vex)
 
 可能性は低いが、CVEごとに追加していきたいというのはあるかもしれない。
 
