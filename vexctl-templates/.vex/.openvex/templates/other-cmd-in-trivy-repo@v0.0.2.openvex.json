@@ -1,0 +1,27 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-8e7f6d424dfd2af0d3d41fd16dca363c2833c96302eae4d1da9a86e36f4dc12d",
+  "author": "The Trivy Project",
+  "timestamp": "2024-04-22T22:56:35.496576+09:00",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2024-2222"
+      },
+      "timestamp": "2024-04-22T22:56:35.496576+09:00",
+      "products": [
+        {
+          "@id": "pkg:golang/github.com/aquasecurity/other-cmd-in-trivy-repo@v0.0.2",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/otms61/vuln@v0.0.1"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path"
+    }
+  ]
+}

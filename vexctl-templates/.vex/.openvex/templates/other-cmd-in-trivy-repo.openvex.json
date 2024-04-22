@@ -1,0 +1,27 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-a96b111e031c7d57de088166c4a4b637cd16bb306739afa86d5cbdeaaba89689",
+  "author": "The Trivy Project",
+  "timestamp": "2024-04-22T22:56:53.626506+09:00",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2024-1111"
+      },
+      "timestamp": "2024-04-22T22:56:53.626507+09:00",
+      "products": [
+        {
+          "@id": "pkg:golang/github.com/aquasecurity/other-cmd-in-trivy-repo",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/otms61/false-positive-vuln@v0.0.1"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path"
+    }
+  ]
+}
